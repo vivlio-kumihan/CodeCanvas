@@ -19,20 +19,12 @@ header {
   padding: 3rem;
 }
 
-@keyframes titleAnimation {
-  0% {
-    letter-spacing: 2rem;
-    opacity: 0;
-  }
-  
-}
 header h1 {
   font-size: 4rem;
   font-weight: 900;
   margin-bottom: 4rem;
   /* 見出しは改行させない。明示的に。 */
   white-space: nowrap;
-  animation: titleAnimation 1.5s;
 }
 
 main {
@@ -45,6 +37,19 @@ main {
 /********** li全体がフワッと下から出てくるだけの完成版 **********/
 .contents li {
   position: relative;
+  /* 透明度を0にして、コードはあるけど画面上から見えなくする。 */
+  opacity: 0;
+  /* オブジェクトの位置を下から上にスライドさせたため、
+  初期値を設定する。 */
+  transform: translateY(4rem);
+}
+
+.contents li.show {
+  opacity: 1;
+  /* オブジェクトへの効果の変容に指定した時間をかける */
+  transition: 1s;
+  /* 元の位置を指定してスライドさせせ見せ方をする。 */
+  transform: none;
 }
 
 .contents li:not(:first-of-type) {
@@ -69,18 +74,8 @@ main {
 }
 
 .contents li:nth-of-type(even) .contentText {
+  /* align-items: flex-end; */
   align-items: flex-start;
-}
-
-/* CSSが効かない時の対処　なんで『main』を書くのか？
-属性の優先順位が想定より逆になっているから。
-逆さになった属性よりも子孫関係を詳しく書き、
-優先順位を下げることで解決させる。 */
-.contents li.show h2,
-main .contents li.show p,
-main .contents li.show img {
-  opacity: 1;
-  transform: none;
 }
 
 .contents h2 {
@@ -98,9 +93,6 @@ main .contents li.show img {
   white-space: nowrap;
   background-color: rgba(20, 20, 20, .8);
   border-radius: 0.2rem;
-  opacity: 0;
-  transform: translateY(5rem);
-  transition: 1s;
 }
 
 .contents p {
@@ -110,22 +102,12 @@ main .contents li.show img {
   line-height: 1.6;
   background-color: rgba(100, 100, 100, .8);
   border-radius: 0.3rem;
-  opacity: 0;
-  transition: 1s;
-}
-.contents li:nth-of-type(even) p {
-  transform: translateX(-5rem);
-}
-.contents li:nth-of-type(odd) p {
-  transform: translateX(5rem);
 }
 
 .contents img {
   display: block;
   width: 65%;
   border-radius: 0.2rem;
-  opacity: 0;
-  transition: 2s 0.5s;
 }
 
 /* 画像レイアウトは沼にハマるポイント多い。
@@ -137,10 +119,4 @@ main .contents li.show img {
 要注意。 */
 .contents li:nth-of-type(even) img {
   margin-left: auto;
-  transform: translateX(10rem);
 }
-
-.contents li:nth-of-type(odd) img {
-  transform: translateX(-10rem);
-}
-
