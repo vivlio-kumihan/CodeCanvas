@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+html {
+  font-size: 15px;
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+a:hover {
+  
+}
+
+[lang="en"] {
+  font-family: 'Anton', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+

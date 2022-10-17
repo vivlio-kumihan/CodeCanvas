@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+html {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 400;  /* <= 100 or 300 or 400 or 500 or 700 or 900 */
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
