@@ -1,0 +1,149 @@
+@charset "utf-8";
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 400;
+  color: #555;
+}
+
+main {
+  max-width: 1020px;
+  margin: 8rem auto;
+  padding: 2rem;
+  background-color: #eee;
+  border-radius: 0.3rem;
+
+}
+
+a {
+  color: #333;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid #000;
+
+}
+
+li:not(:first-of-type) {
+  margin-top: 2rem;
+}
+
+/********** inline要素のセンタリング **********/
+
+p {
+  /* 内包するinline要素をセンタリングする。 */
+  text-align: center;
+  color: #fff;
+  background-color: green;
+}
+
+.image {
+  /* 内包するinline要素をセンタリングする。 */
+  text-align: center;
+  color: #fff;
+  background-color: blue;
+}
+
+.image img {
+  width: 24rem;
+}
+
+.anchor,
+.spanning {
+  text-align: right;
+  background-color: yellow;
+}
+
+.anchor a,
+.spanning span {
+  /* inline要素は幅、高さの指定ができない。
+  回避策は、これか、『display: flex』 */
+  display: inline-block;
+  width: 20rem;
+  height: 4rem;
+  /* 『文字』をセンタリングしたいから
+  親要素『a, span』に命令をする。 */
+  text-align: center;
+  /* inline要素の縦センターは行間指定でする。 */
+  /* ただこのやり方は管理コストが高いので基本的にはやならい。 */
+  /* 常にheightの数値に依存するから。 */
+  line-height: 4rem;
+  color: #fff;
+  background-color: peru;
+}
+
+
+/********** block要素のセンタリング **********/
+.container {
+  /* block要素はデフォルトで左寄せ
+  block要素のセンタリングは、
+  『auto』で左右のマージンを均等に振り分ける。 */
+  /* margin: 1rem auto; */
+  
+  /* block要素の右寄せ */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  /* 肝心なのはココから↓
+  margin-leftの値をautoにすると
+  マージンをすべて左側に振り分ける
+  結果、右寄せになるというトリック。 */
+  margin-left: auto;
+  
+  /* block要素は100％がデフォルト */
+  /* 指定しないと親要素の幅いっぱいになる。 */
+  width: 10rem;
+  height: 10rem;
+  background-color: #555;
+}
+
+
+/********** flexboxのセンタリング **********/
+.flex-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  margin-top: 1rem;
+  height: 20rem;
+  background-color: #999;
+}
+
+.flex-box a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  width: 10rem;
+  height: 5rem;
+  background-color: #fff;
+}
+
+
+/********** positionのセンタリング **********/
+.position-box {
+  position: relative;
+
+  margin-top: 1rem;
+  height: 20rem;
+  background-color: #999;
+  
+}
+
+.follow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  width: 10rem;
+  height: 5rem;
+  background-color: #fff;
+}
