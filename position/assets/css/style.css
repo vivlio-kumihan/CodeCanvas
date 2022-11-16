@@ -3,16 +3,16 @@
 main {
   max-width: 1020px;
   width: 100%;
-  margin: 4rem auto;
+  margin: 2rem auto;
   padding: 2rem;
   background-color: #eee;
   border-radius: 0.3rem;
 }
 
 h1 {
-  padding: 0 0 0.7rem 1rem;
+  padding: 0 0 .2rem .5rem;
   font: inherit;
-  font-size: 3rem;
+  font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.2;
   border-left: 0.7rem solid #333;
@@ -98,7 +98,31 @@ h1 {
   right: 0;
 
   width: 100%;
-  height: 50px;
+  height: 2rem;
   background-color: yellow;
 }
 
+.container {
+  width: 100%;
+  background-color: #555;
+}
+
+.description {
+  position: relative;
+  margin-top: 2rem;
+  /* height: 10rem; */
+}
+
+.description img {
+  width: 20rem;
+  height: auto;
+  /* position: absolute;
+  top: 2rem;
+  left: 2rem; */
+}
+
+.text {
+  position: absolute;
+  top: 5rem;
+  left: 5rem;
+}
