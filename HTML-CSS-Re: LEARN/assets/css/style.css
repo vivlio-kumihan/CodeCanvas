@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+html {
+  font-size: 15px;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.7;
+  color: #555;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0rem auto;
+}
+
+.container:not(:first-of-type) {
+  margin-top: 5rem;
+}
+
+.element {
+  width: 7rem;
+  height: 7rem;
+  margin: 2rem;
+  padding: 1rem;
+  background-color: #eee;
+}
+
+h2 {
+  margin-bottom: .5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+h2:not(:first-of-type) {
+  margin-top: 1.5rem;
+}
+
+dt:not(:first-of-type) {
+  margin-top: 1rem;
+}
+
+dd {
+  margin-left: 2rem;
+}
+
+.element.two {
+  display: inline-block;
+}
+
+.element.three {
+  /* display: flex; */
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}

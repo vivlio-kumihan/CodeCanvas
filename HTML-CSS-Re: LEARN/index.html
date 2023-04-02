@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./assets/css/destyle.css">
+  <link rel="stylesheet" href="./assets/css/fonts.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script src="https://kit.fontawesome.com/678cad97f5.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="./assets/js/behavior.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <h2>block・inline特性</h2>
+    <dl>
+      <dt>block特性の場合</dt>
+      <dd>width, heightの指定が効く。<br>marginの上下は相殺される。<br>paddingは効く。</dd>
+      <dt>block特性の場合</dt>
+      <dd>width, heightの指定は効かず、内容だけで領域は持たない。<br>marginの左右だけが効く。<br>paddingは効く。</dd>
+    </dl>
+    <p class="element one">p要素</p>
+    <p class="element one">p要素</p>
+    <a class="element one" href="#">a要素</a>
+    <a class="element one" href="#">a要素</a>
+  </div>
+
+  <div class="container">
+    <h2>displayをblock, inline-blockにする</h2>
+    <dl>
+      <dt>display:block;の場合</dt>
+      <dd>anchorのデフォルトの特性がblock特性に変わる。</dd>
+      <dt>display:inline-block;の場合</dt>
+      <dd>block特性を維持して横に並ぶ。</dd>
+    </dl>
+    <p class="element two">p要素</p>
+    <p class="element two">p要素</p>
+    <a class="element two" href="#">a要素</a>
+    <a class="element two" href="#">a要素</a>
+  </div>
+
+  <div class="container">
+    <h2>displayをflex, gridにする</h2>
+    <dl>
+      <dt>flex, gridの場合</dt>
+      <dd>block特性を包含している。<br>要素内の値をセンターセンターにするなどレイアウトする属性justify-content, align-itemsが共通で効く。</dd>
+    </dl>
+    <p class="element three">p要素</p>
+    <p class="element three">p要素</p>
+    <a class="element three" href="#">a要素</a>
+    <a class="element three" href="#">a要素</a>
+  </div>
+</body>
+
+</html>
