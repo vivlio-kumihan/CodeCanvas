@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+html {
+  font-size: 15px;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.7;
+  color: #555;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0rem auto;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;  
+  margin-bottom: 2rem;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper:not(:first-of-type) {
+  margin-top: 2rem;
+}
+
+dt {
+  flex: 1;
+}
+
+dd {
+  flex: 7;
+  padding-left: 2rem;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(.5rem);
+  transition: .3s;
+}
+
+dl > .wrapper:first-of-type > dd.active {
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+}
+
+input[type="button"] {
+  width: 100%;
+  padding: .25rem 1rem;
+  text-align: center;
+  font-weight: 700;
+  color: #fff;
+  background-color: #555;
+  border-radius: .3rem;
+}
+
+input[type="button"]:hover {
+  opacity: .7;
+  transform: none;
+  transform: translateY(-0.15rem);
+  box-shadow: 2px 2px 2px #999;
+}
+
+.wrapper > input {
+  display: none;
+}
+
+dl > .wrapper:last-of-type > label {
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+dl > .wrapper:last-of-type {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+dl > .wrapper:last-of-type > label::before,
+input[type="checkbox"]:checked + label::after {
+  position: absolute;
+  display: inline-block;
+  content: "";
+  transition: .3s;
+}
+
+dl > .wrapper:last-of-type > label::before{
+  top: .4rem;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  border: 2px solid #777;
+  border-radius: .2rem;
+}
+
+input[type="checkbox"]:checked + label::after {
+  top: .4em;
+  left: .4em;
+  width: .4em;
+  height: .7em;
+  border-right: 2px solid #555;
+  border-bottom: 3px solid #555;
+  transform: rotate(45deg);
+}
+
+dl > .wrapper:last-of-type > input[type="checkbox"]:checked ~ dd {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+}
