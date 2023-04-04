@@ -17,20 +17,32 @@ body {
   justify-content: center;
   max-width: 900px;
   height: 100vh;
-  margin: 0 auto;
-}
-
-h2 {
-  font-size: 2rem;
-  font-weight: 900;
-  margin-bottom: 2rem;
-}
-.colored-box {
-  width: 20rem;
-  height: 20rem;
   background-color: #eee;
 }
 
-.colored-box.two {
-  background-color: #f00;
+.one {
+  width: 300px;
+  height: 300px;
+  background-image: url(../img/cover.jpg);
+  background-repeat: no-repeat;
+  background-size: 175%;
+  background-position: 30% 100%;
 }
+
+.two {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin-top: 2rem;
+  overflow: hidden;
+}
+
+.two > img {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -65%);
+  width: 175%;
+}
+
