@@ -1,9 +1,3 @@
-@charset "UTF-8";
-
-html {
-  font-size: 15px;
-}
-
 body {
   font-family: 'Noto Sans JP', sans-serif;
   line-height: 1.7;
@@ -19,51 +13,4 @@ body {
   height: 100vh;
   margin: 0 auto;
   background-color: #eee;
-}
-
-.wrapper {
-  width: 50rem;
-  margin: 0 auto;
-}
-
-h2 {
-  font-size: 1.5rem;
-  font-weight: 900;
-  line-height: 1;
-  margin: 2rem 0 1rem;
-  text-align: center;
-  letter-spacing: .5em;
-}
-
-h2:first-of-type {
-  margin: 0 0 1rem;
-}
-
-li {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
-li:not(:first-of-type) {
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px dotted #333;
-}
-
-li > time {
-  flex: 1;
-  padding: 0 1rem;
-  text-align: center;
-  font-size: .9rem;
-  font-weight: 600;
-  color: #fff;
-  background-color: #7070ce;
-  border-radius: .3rem;
-  }
-
-
-li > p {
-  flex: 4;
-  padding-left: 1rem;
 }

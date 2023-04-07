@@ -11,134 +11,49 @@ body {
 }
 
 .container {
-  max-width: 900px;
+  max-width: 600px;
   height: 100vh;
   margin: 0 auto;
   padding: 5rem;
   background-color: #eee;
 }
 
-.colored-box {
-  width: 5rem;
-  height: 5rem;
-  margin: 0 auto;
-  background-color: #999;
+ul {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+li:not(:first-of-type) {
+  margin-left: 2rem;
+}
+
+input {
+  padding: .15rem 1rem;
+  font-weight: 700;
+  color: #fff;
+  background-color: #777;
   border-radius: .3rem;
+  transition: .3s;
 }
 
-.colored-box:not(:first-of-type) {
-  margin-top: 3rem;
+input:hover {
+  opacity: .5;
+  transform: translateY(-.1rem);
+  box-shadow: 0px 2px 2px #555;
 }
 
-.transformation {
-  /* 回転 */
-  /* transform: rotate(45deg); */
-  /* 拡大・縮小 */
-  /* transform: scale(2, .5); */
-  /* 歪み */
-  /* transform: skewY(-45deg); */
-  /* transform: scale(.5); */
-}
-
-/* .translation用 */
-/* .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 900px;
-  height: 100vh;
-  margin: 0rem auto;
-  background-color: #eee;
-} */
-
-/* 元の領域を保ったまま移動 */
-/* .colored-box.translation {
-  transform: translate(20rem, 20rem);
-} */
-
-/* .fixed用 */
-/* .container {
-  position: relative;
-  
-  max-width: 900px;
-  margin: 0rem auto;
-  background-color: #eee;
-} */
-
-/* 元の領域を失って移動 */
-/* .colored-box.fixed {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  border-radius: 50%;
-} */
-
-.diamond {
-  width: 10rem;
-  height: 10rem;
-  margin: -1rem auto;
-  border-left: 3.5rem solid #999;
-  border-bottom: 3.5rem solid #999;
-  transform: rotate(-45deg) skew(10deg, 10deg);
-  border-radius: .7rem;
-}
-
-.heading.one {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 3rem;
-  font-size: 2rem;
-  font-weight: 900;
+input[value="button01"],
+input[value="button02"], 
+input[value="button03"] {
   text-transform: uppercase;
 }
 
-.paren.left,
-.paren.right {
-  position: relative;
-}
-
-.paren.left > .line.bold,
-.paren.left > .line.thin,
-.paren.right > .line.thin,
-.paren.right > .line.bold {
-  position: absolute;
-}
-
-.paren > .line {
-  width: 3rem;
-  height: 3rem;
-  transform: rotate(45deg) skew(7deg, 7deg);
-}
-
-.paren.left > .bold {
-  top: -6.5rem;
-  left: -5rem;
-  margin: 5rem auto;
-  border-left: .7rem solid #555;
-  border-bottom: .7rem solid #555;
-}
-
-.paren.left > .thin {
-  top: -6.5rem;
-  left: -3.5rem;
-  margin: 5rem auto;
-  border-left: .3rem solid #555;
-  border-bottom: .3rem solid #555;
-}
-
-.paren.right > .bold {
-  top: -6.5rem;
-  right: -5rem;
-  margin: 5rem auto;
-  border-top: .7rem solid #555;
-  border-right: .7rem solid #555;
-}
-
-.paren.right > .thin {
-  top: -6.5rem;
-  right: -3.5rem;
-  margin: 5rem auto;
-  border-top: .3rem solid #555;
-  border-right: .3rem solid #555;
+#out-put-text {
+  width: 50%;
+  margin: 2rem auto 0;
+  padding: .2rem 1rem;
+  text-align: center;
+  background-color: #fff;
+  border-radius: .3rem;
 }
