@@ -1,0 +1,25 @@
+@use "reset";
+
+body {
+}
+
+.container {
+  margin: 0 auto;
+}
+
+header {
+  background-color: #ccc;
+}
+
+header > .container,
+main > .container,
+footer > .container {
+  max-width: 1170px;
+}
+
+main {
+}
+
+footer {
+  background-color: #ccc;
+}
