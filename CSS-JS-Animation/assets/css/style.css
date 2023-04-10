@@ -2,6 +2,7 @@
 
 html {
   font-size: 15px;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -11,49 +12,93 @@ body {
 }
 
 .container {
-  max-width: 600px;
+  max-width: 1050px;
   height: 100vh;
   margin: 0 auto;
   padding: 5rem;
   background-color: #eee;
 }
 
-ul {
+.animations {
+  max-width: 600px;
+  width: 100%;
+  margin: 5rem auto 0;
+  padding: 1rem;
+  background-color: #ddd;
+}
+
+@keyframes translateToX {
+  100% {
+    transform: translateX(calc(600px - 8rem));
+  }
+}
+
+.animations > li {
   display: flex;
   justify-content: center;
-  align-self: center;
-}
-
-li:not(:first-of-type) {
-  margin-left: 2rem;
-}
-
-input {
-  padding: .15rem 1rem;
-  font-weight: 700;
-  color: #fff;
-  background-color: #777;
-  border-radius: .3rem;
-  transition: .3s;
-}
-
-input:hover {
-  opacity: .5;
-  transform: translateY(-.1rem);
-  box-shadow: 0px 2px 2px #555;
-}
-
-input[value="button01"],
-input[value="button02"], 
-input[value="button03"] {
-  text-transform: uppercase;
-}
-
-#out-put-text {
-  width: 50%;
-  margin: 2rem auto 0;
-  padding: .2rem 1rem;
+  align-items: center;
+  
+  width: 6rem;
+  height: 6rem;
   text-align: center;
-  background-color: #fff;
-  border-radius: .3rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #fff;
+  background-color: #aaa;
+  animation: translateToX 3s infinite alternate;
 }
+
+.animations > .ease {
+  animation-timing-function: ease;
+}
+.animations > .linear {
+  animation-timing-function: linear;
+}
+.animations > .ease-in {
+  animation-timing-function: ease-in;
+}
+.animations > .ease-out {
+  animation-timing-function: ease-out;
+}
+.animations > .ease-in-out {
+  animation-timing-function: ease-in-out;
+}
+.animations > .steps-start {
+  animation-timing-function: steps(10, start);
+}
+.animations > .steps-end {
+  animation-timing-function: steps(6, end);
+}
+.animations > .cubic-bezier {
+  animation-timing-function: cubic-bezier(0, -0.53, 1, -0.35);
+}
+
+
+
+.animations > li:not(:first-of-type) {
+  margin-top: 1rem;
+}
+
+/* animation-direction:
+normal             毎回順方向に再生
+reverse            毎回逆方向に再生
+alternate          毎回反転させ、初回は順方向
+alternate-reverse  毎回反転させ、初回は逆方向
+
+timing-function:
+ease
+= cubic-bezier(0.25, 0.1, 0.25, 1.0) 
+既定値。アニメーションの中央に向けて変化量が増加し最後に向けて減少する。
+linear
+= cubic-bezier(0.0, 0.0, 1.0, 1.0)
+等しい速度でアニメーションする。
+ease-in
+= cubic-bezier(0.42, 0, 1.0, 1.0)
+プロパティのアニメーションの変化の速度はゆっくり始まり終了まで加速する。
+ease-out
+= cubic-bezier(0, 0, 0.58, 1.0)
+アニメーションは速く始まり速度を落としながら続く。
+ease-in-out
+= cubic-bezier(0.42, 0, 0.58, 1.0)
+アニメーションはゆっくり変化し、速度を上げまた速度を落とす。 */
