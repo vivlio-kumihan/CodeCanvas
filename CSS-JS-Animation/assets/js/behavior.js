@@ -1,14 +1,26 @@
-// ローディング画面をクリックしたら開ける
-// window.addEventListener("load", function() {
-//   const loadingBg = document.getElementById("loading-bg")
-//   loadingBg.addEventListener("click", function() {
-//     this.classList.remove("active")
-//   })
-// })
+setTimeout(function() {
+  location.href = "#one"
+}, 2000)
 
-// システムが何かしているのをsetTimeout関数を使って仮装する
-window.addEventListener("load", function() {
-  this.setTimeout(() => {
-    document.getElementById("loading-bg").classList.remove("active")
-  }, 8000)
+const anchorToSection = Array.from(document.getElementById("anchor-to-section").children)
+anchorToSection.forEach(function(elem) {
+  elem.addEventListener("click", function(e) {
+    switch(e.target.className) {
+      case "one":
+        location.href = "#one"
+        break;
+      case "two":
+        location.href = "#two"
+        break;
+      case "three":
+        location.href = "#three"
+        break;
+      case "four":
+        location.href = "#four"
+            break;
+      case "five":
+        location.href = "#five"
+        break;
+    }
+  })
 })
