@@ -8,232 +8,117 @@ html {
 body {
   font-family: 'Noto Sans JP', sans-serif;
   line-height: 1.7;
-  color: #fff;
-  background-color: #1e1e1e;
 }
 
-.container {
-  max-width: 1050px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-/* header */
 header {
+  width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-}
-
-@keyframes titleAnimation {
-  0% {
-    letter-spacing: .3em;
-    opacity: 0;
-  }
-}
-
-header > h1 {
-  font-family: 'Work Sans', sans-serif;
-  font-size: 2rem;
-  line-height: 1em;
-  font-weight: 900;
-  letter-spacing: 1em;
-  text-transform: uppercase;
-  white-space: nowrap ;
-  animation: titleAnimation 1.5s;
-}
-
-/* article */
-.article > .animation-target {
-  position: relative;
-}
-
-.article > .animation-target:not(:first-of-type) {
-  margin-top: 10rem;
-}
-
-.animation-target > figure {
-  width: 65%;
-  aspect-ratio: 4/3;
-  color: #555;
-  border-radius: .3rem;
-  overflow: hidden;
-  transform: translateX(-2rem);
-  transition: 1s .5s;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.article > .animation-target:nth-of-type(even) > figure {
-  margin-left: auto; 
-  transform: translateX(2rem) trasi;
-}
-
-.animation-target > figure > img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: 50% 50%;
-  transform: scale(1.2) ;
-}
-
-/* important */
-.animation-target > .contents-text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  position: absolute;
-  top: 2rem;
-  left: 0;
-}
-
-.animation-target:nth-of-type(odd) > .contents-text {
-  right: 0;
-}
-
-.animation-target:nth-of-type(even) > .contents-text {
-  align-items: flex-start;
-}
-
-.animation-target h2 {
-  padding: .25em 1em;
-  font-family: 'Work Sans', sans-serif;
   font-size: 3rem;
-  line-height: 1em;
-  font-weight: 700;
-  letter-spacing: .152em;
-  text-transform: capitalize;
-  white-space: nowrap ;
-  background-color: rgba(25, 25, 25, .8);
-  border-radius: .3rem;
-  transition: 1s;
-  transform: translateY(2rem);
-  visibility: hidden;
-  opacity: 0;
-}
-
-.animation-target p {
-  width: calc(15px * 28);
-  margin-top: 2rem;
-  padding: .75em 2em;
-  list-style: 1.5;
-  color: #333;
-  background-color: rgba(255, 255, 255, .5);
-  border-radius: .3rem;
-  transition: 1s;
-  transform: translateX(3rem);
-  visibility: hidden;
-  opacity: 0;
-}
-
-.animation-target:nth-of-type(even) p {
-  transform: translateX(-3rem);
-}
-
-.article > .animation-target.active > figure,
-.article > .animation-target.active h2,
-.article > .animation-target.active p {
-    transform: translate(0, 0);
-    visibility: visible;
-    opacity: 1;
-}
-/* ================================================= */
-/*  左右に要素をふるレイアウトを設計する際の
-    基本的な考え方 */
-
-/* 上から順番に流すレイアウト
-.container   元
-|_  ul       大枠
-    |_  li   中枠 */
-
-/*  基本的には上から順番に流しているレイアウト
-    liをrelative, text-contentはabsoluteとして、
-    この領域をフロートさせてレイアウト */
-
-/*  動きの基準となる『li』は『width: 100%』を持たせる、または引き継がせる。
-    左右に振っているように見せるのは、
-    figureの幅をliより小さく設定し、block特性を使って動かす。 */
-        /* li
-        |_  figure          部品1  block特性
-        |_  text-contents   部品2. position: absolute */
-
-/*  text-contentsをflexBoxとする。
-    親のtext-contentsは、position: absoluteで領域の位置を確保して、
-    flexBoxを使って、領域横方向の位置を調整する。 */
-            /* text-contents
-            |_ h2
-            |_ p */
-
-.container.two {
-  margin-top: 30vh;
-  font-size: 1rem;
-  line-height: 1em;
+  font-weight: 900;
   text-transform: uppercase;
-  color: #333;
+  letter-spacing: .5em;
+  color: #fff;
+  background-color: #111;
+}
+
+main {
+  max-width: 1050px;
+  width: 100%;
+  margin: 0 auto;
   background-color: #eee;
 }
 
-.container.two li {
-  position: relative;
+button {
+  display: block;
+  width: 14rem;
+  height: 3rem;
+  margin-top: 6rem;
 }
 
-.container.two li:not(:first-of-type) {
-  margin-top: 5rem;
+button > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: inherit;
+  height: inherit;
+  font-size: 1.1rem;
+  line-height: 1em;
+  font-weight: 700;
+  background-color: #fff;
+  border: 1px solid #999;
+  border-radius: .3rem;
 }
 
-/*  『左右にふって見せる』ために見出し的に扱える画像の幅を
-    『li』より小さくして使う。 */
-.container.two figure {
-  width: 70%;
-  aspect-ratio: 4/3;
-  overflow: hidden;
+figure {
+  width: 50rem;
+  height: 15rem;
+  margin-top: 6rem;
 }
 
-/* block特性を使って、偶数の『li』を右揃えする。 */
-.container.two li:nth-of-type(even) > figure {
+figure > .pict {
+  height: 100%;
+  background-image: url(../img/p2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 20%;
+}
+
+article:nth-of-type(even) > button,
+article:nth-of-type(even) > figure {
   margin-left: auto;
 }
 
-/* いつものimgの設定 */
-.container.two img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: 50% 50%;
-  transform: scale(1.3);
+.animation-target {
+  position: relative;
+  overflow: hidden;
 }
 
-.container.two li article {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.animation-target > a,
+.animation-target > .pict {
+  opacity: 0;
+}
 
+@keyframes show-elem {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animation-target.active > a,
+.animation-target.active > .pict {
+  animation: show-elem .5s 1s forwards;
+}
+
+
+@keyframes show-mask {
+  0% {
+    transform: translateX(-100%);
+  }
+  45%, 55% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animation-target::before {
   position: absolute;
-  top: 2rem;
+  top: 0;
   left: 0;
-}
-
-.container.two li:nth-of-type(odd) article {
-  align-items: flex-end;
-  right: 0;
-}
-
-article > h2 {
-  padding: 0.25rem 1rem;
-  font-size: 4rem;
-  font-weight: 900;
-  line-height: 1em;
-  letter-spacing: .2rem;
-  color: #fff;
+  content: "";
+  width: inherit;
+  height: inherit;
   background-color: #333;
+  transition: .2s;
 }
 
-article > p {
-  width: calc(1rem * 20);
-  margin-top: 1rem;
-  padding: 1rem;
-  font-size: 1rem;
-  line-height: 1.7;
-  background-color: #ccc;
+.animation-target.active::before {
+  animation: show-mask 1.8s forwards;
 }
