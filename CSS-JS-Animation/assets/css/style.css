@@ -25,6 +25,14 @@ header {
   align-items: center;
   height: 100vh;
 }
+
+@keyframes titleAnimation {
+  0% {
+    letter-spacing: .3em;
+    opacity: 0;
+  }
+}
+
 header > h1 {
   font-family: 'Work Sans', sans-serif;
   font-size: 2rem;
@@ -33,39 +41,33 @@ header > h1 {
   letter-spacing: 1em;
   text-transform: uppercase;
   white-space: nowrap ;
+  animation: titleAnimation 1.5s;
 }
 
 /* article */
 .article > .animation-target {
   position: relative;
-  transform: translateY(20rem);
-  transition: 1s;
-  visibility: hidden;
-  opacity: 0;
 }
 
 .article > .animation-target:not(:first-of-type) {
   margin-top: 10rem;
 }
 
-.article > .animation-target.active {
-  transform: translateY(0);
-  visibility: visible;
-  opacity: 1;
-
-}
-
 .animation-target > figure {
   width: 65%;
   aspect-ratio: 4/3;
   color: #555;
-  background-color: #eee;
   border-radius: .3rem;
   overflow: hidden;
+  transform: translateX(-2rem);
+  transition: 1s .5s;
+  visibility: hidden;
+  opacity: 0;
 }
 
 .article > .animation-target:nth-of-type(even) > figure {
   margin-left: auto; 
+  transform: translateX(2rem) trasi;
 }
 
 .animation-target > figure > img {
@@ -73,7 +75,7 @@ header > h1 {
   height: 100%;
   object-fit: contain;
   object-position: 50% 50%;
-  transform: scale(1.2);
+  transform: scale(1.2) ;
 }
 
 /* important */
@@ -105,6 +107,10 @@ header > h1 {
   white-space: nowrap ;
   background-color: rgba(25, 25, 25, .8);
   border-radius: .3rem;
+  transition: 1s;
+  transform: translateY(2rem);
+  visibility: hidden;
+  opacity: 0;
 }
 
 .animation-target p {
@@ -115,8 +121,23 @@ header > h1 {
   color: #333;
   background-color: rgba(255, 255, 255, .5);
   border-radius: .3rem;
+  transition: 1s;
+  transform: translateX(3rem);
+  visibility: hidden;
+  opacity: 0;
 }
 
+.animation-target:nth-of-type(even) p {
+  transform: translateX(-3rem);
+}
+
+.article > .animation-target.active > figure,
+.article > .animation-target.active h2,
+.article > .animation-target.active p {
+    transform: translate(0, 0);
+    visibility: visible;
+    opacity: 1;
+}
 /* ================================================= */
 /*  左右に要素をふるレイアウトを設計する際の
     基本的な考え方 */
