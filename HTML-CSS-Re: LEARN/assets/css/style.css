@@ -1,7 +1,9 @@
-@charset "utf-8";
+@charset "UTF-8";
 
 html {
+  font-size: 15px;
   scroll-behavior: smooth;
+  scroll-margin-top: 5rem;
 }
 
 body {
@@ -10,76 +12,85 @@ body {
   color: #555;
 }
 
-.container {
-  max-width: 900px;
-  width: 100%;
-  margin: 4rem auto;
-  padding: 1rem;
-  background-color: #eee;
-}
-
-.wrapper {
-  padding: 1rem;
-  max-height: 35rem;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: .5em;
-  background-color: #aaa;
-  /* overflow: auto; */
-  overflow: scroll;
-}
-
-.wrapper.row > header,
-.wrapper.row > article,
-.wrapper.row > footer {
-  padding: 1rem;
-  background-color: #fff;
-  border: 1px solid #333;
-}
-
-.wrapper.row > header {
-  position: sticky;
-  top: 0;
-  left: 0;
-}
-
-.wrapper.row > article {
-  width: 200vw;
-  height: 200vh;
-  margin: 1rem 0;
-}
-
-.wrapper.row > footer {
-  position: sticky;
-  bottom: 0;
-  left: 0;
-}
-
-.wrapper.column {
+header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  /* widthでやるならここはコメントアウト */
-  gap: 1rem;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding: 0 10rem;
+  color: #fff;
+  background-color: #555;
+  text-transform: capitalize;
 }
 
-.wrapper.column > aside {
-  flex: 1;
-  position: sticky;
-  top: 0;
-  /* このやり方もあるけど、今回は止めておく */
-  /* width: 30%; */
-  padding: 1rem;
-  background-color: antiquewhite;
+/* flex-box, gridとも伸縮可能な領域に対してa領域を被せることができる。
+aにdisplay: inline-block, blockどちらでも可能。*/
+header nav dl,
+header nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.wrapper.column > main {
-  flex: 3;
-  /* このやり方もあるけど、今回は止めておく */
-  /* width: 65%; */
-  height: 150vh;
-  padding: 1rem;
-  background-color: azure;
 
+header nav dt,
+header nav dd,
+header nav li {
+  font-weight: 400;
+}
+
+header.two ul,
+header.two dl {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  background-color: #333;
+}
+
+header nav li:not(:first-of-type) {
+  margin-left: 2rem;
+}
+
+header nav dd {
+  margin-left: 2rem;
+}
+
+header.two nav li:not(:first-of-type) {
+  margin-left: 0rem;
+}
+
+header.two nav dd {
+  margin-left: 0rem;
+}
+
+header nav a {
+  display: inline-block;
+  padding: 2rem 1rem;
+  background-color: red;
+}
+
+.container {
+  max-width: 600px;
+  margin: 10rem auto 0;
+  padding: 2rem;
+  background-color: #eee;
+  border-radius: .5rem;
+  box-shadow: 2px 2px 2px #aaa;
+}
+
+/* 親要素に領域がある前提で、
+a要素にdisplay: block;として行方向をanchorで埋めることができる。
+列方向については、height: 100%とすることで埋めることができる。 */
+article:first-of-type {
+  width: 20rem;
+  height: 10rem;
+  margin: 0 auto;
+  color: #fff;
+  background-color: red;
+}
+/* ただ、このやり方をするとanchor内の文字をレイアウトする場合に難儀する。
+上下をpaddingで調整するとしても煩雑になると思われる。 */
+article:first-of-type a {
+  display: block;
+  height: 100%;
+  background-color: #333;
 }
