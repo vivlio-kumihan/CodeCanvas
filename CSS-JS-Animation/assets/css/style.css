@@ -3,75 +3,77 @@
 html {
   font-size: 15px;
   scroll-behavior: smooth;
+  scroll-margin-top: 5rem;
 }
 
 body {
   font-family: 'Noto Sans JP', sans-serif;
   line-height: 1.7;
+  color: #555;
 }
 
 header {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 7rem;
   padding: 0 3rem;
-  font-size: 1.1rem;
-  text-transform: uppercase;
   color: #fff;
-  background-color: #111;
+  background-color: #555;
+  text-transform: capitalize;
   transition: .5s;
-  transform: translateY(-7rem);
+}
+
+.ready {
+  transform: translateY(-5rem);
+  visibility: hidden;
   opacity: 0;
 }
 
-.active {
+.apear {
+  position: sticky;
+  top: 0;
+  color: #ccc;
+  background-color: bisque;
   transform: translateY(0);
+  visibility: visible;
   opacity: 1;
+}
 
+.fix-header {
+  position: sticky;
+  top: 0;
 }
 
 
-
-header #logo {
-  font-size: 1.3rem;
-  font-weight: 900;
-}
-
-main {
-  max-width: 1050px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-ul {
+header nav ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-header li:not(:first-of-type) {
-  margin-left: 2rem;
+header nav li:not(:first-of-type) {
+  margin-left: .25rem;
 }
 
-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 50vh;
+header nav a {
+  display: block;
+  padding: 2rem 1rem;
+  font-size: 1rem;
+  line-height: 1;
+  background-color: red;
+}
+
+.container {
+  max-width: 600px;
+  margin: 5rem auto 0;
+  padding: 2rem;
+  text-align: justify;
+  text-indent: 1rem;
   background-color: #eee;
+  border-radius: .5rem;
+  box-shadow: 2px 2px 2px #ccc;
 }
 
-main {
-  margin: 7rem auto;
+article {
+  height: 60vh;
 }
-
-section:not(:first-of-type) {
-  margin-top: 5rem;
-}
-
