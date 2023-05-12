@@ -106,10 +106,8 @@ header .link-menu {
   top: 4rem;
   right: 0;
   width: 100vw;
-  height: 100vh;
-  /* margin, paddingどちらも効かない
-  margin-bottom: 3rem;
-  padding-bottom: 3rem; */
+  height: calc(100vh - 4rem);
+  padding-bottom: 2rem;
   font-size: 1.2rem;
   line-height: 1;
   background-color: #aaa;
